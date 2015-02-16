@@ -66,7 +66,7 @@ def display_sidebar_menu(has_filters=False):
 
 
 @register.tag_function
-def get_app_name():
+def get_app_name(context):
     if hasattr(settings, 'CONSOLE_ADMIN_APP_NAME'):
         app_name = settings.CONSOLE_ADMIN_APP_NAME
     else:
@@ -75,7 +75,7 @@ def get_app_name():
 
 
 @register.tag_function
-def get_app_logo():
+def get_app_logo(context):
     if hasattr(settings, 'CONSOLE_ADMIN_APP_LOGO_URL'):
         logo_url = ''
     else:
