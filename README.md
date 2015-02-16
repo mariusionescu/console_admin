@@ -19,6 +19,7 @@ Add 'console_admin' in INSTALLED_APPS, before Django Admin:
         'console_admin',
         ...
     )
+
 Add 'django.core.context_processors.request' to TEMPLATE_CONTEXT_PROCESSORS:
 
     TEMPLATE_CONTEXT_PROCESSORS = (
