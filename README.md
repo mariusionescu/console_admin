@@ -9,7 +9,7 @@ Please configure in your settings.py:
         {
             'name': 'Menu entry name',
             'models': [
-                'DjangoMdel',
+                'DjangoModel',
                 'AnotherDjangoModel',
                 # Or you can add an external (or internal) URL:
                 # ('URL', 'https://google.com/')
