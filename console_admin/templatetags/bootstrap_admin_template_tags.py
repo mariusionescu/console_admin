@@ -77,9 +77,9 @@ def get_app_name():
 @register.simple_tag
 def get_app_logo():
     if hasattr(settings, 'CONSOLE_ADMIN_APP_LOGO_URL'):
-        logo_url = ''
-    else:
         logo_url = settings.CONSOLE_ADMIN_APP_LOGO_URL
+    else:
+        logo_url = ''
     return logo_url
 
 @register.inclusion_tag('bootstrap_admin/sidebar_menu.html',
