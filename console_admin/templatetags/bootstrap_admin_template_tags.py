@@ -65,6 +65,23 @@ def display_sidebar_menu(has_filters=False):
     return sidebar_menu_setting()
 
 
+@register.tag_function
+def get_app_name():
+    if hasattr(settings, 'CONSOLE_ADMIN_APP_NAME'):
+        app_name = settings.CONSOLE_ADMIN_APP_NAME
+    else:
+        app_name = 'My Application'
+    return app_name
+
+
+@register.tag_function
+def get_app_logo():
+    if hasattr(settings, 'CONSOLE_ADMIN_APP_LOGO_URL'):
+        logo_url = ''
+    else:
+        logo_url = settings.CONSOLE_ADMIN_APP_LOGO_URL
+    return logo_url
+
 @register.inclusion_tag('bootstrap_admin/sidebar_menu.html',
                         takes_context=True)
 def render_menu_app_list(context):
