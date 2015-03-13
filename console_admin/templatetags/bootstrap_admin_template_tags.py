@@ -166,6 +166,8 @@ def render_menu_app_list(context):
                 for model_name in app_config['models']:
                     if type(model_name) in (tuple, list):
                         m = {'name': model_name[0], 'admin_url': model_name[1]}
+                        if m in app_obj['models']:
+                            continue
                         app_obj['name'] = app_config['name']
                         app_obj['icon'] = app_config['icon']
                         app_obj['models'].append(m)
@@ -179,7 +181,8 @@ def render_menu_app_list(context):
                             app_obj['models'].append(m)
                             app_obj['app_url'].append(app_config['name'])
                             app_obj['all_models'].append(m['object_name'].lower())
-            app_list_config.append(app_obj)
+            if app_obj['all_models']:
+                app_list_config.append(app_obj)
     else:
         app_list_config = app_list
 
