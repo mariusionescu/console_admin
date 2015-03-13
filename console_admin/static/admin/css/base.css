@@ -177,7 +177,7 @@ h3, .h3 {
   border-left: 3px solid transparent;
   color: rgba(255, 255, 255, 0.8);
   display: block;
-  padding: 13px 40px 14px 14px;
+  /*padding: 13px 40px 14px 14px;*/
   font-size:12px;
   font-family: "Open Sans",sans-serif;
 }
